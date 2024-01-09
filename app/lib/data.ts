@@ -127,6 +127,7 @@ export async function fetchFilteredInvoices(
   }
 }
 
+// queryが入ってるデータの数でページ数を算出
 export async function fetchInvoicesPages(query: string) {
   noStore();
   try {
@@ -168,6 +169,7 @@ export async function fetchInvoiceById(id: string) {
       amount: invoice.amount / 100,
     }));
 
+    console.log(invoice); // invoice is an empty array []
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
